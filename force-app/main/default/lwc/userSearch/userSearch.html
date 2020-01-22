@@ -1,0 +1,31 @@
+<template>
+    <div class='form-container slds-p-around_medium'>
+        <div>
+            <div class="slds-grid slds-gutters">
+                <div class="slds-col slds-size_2-of-3">
+                    <lightning-input type="search" class="user-search" value={userId}>
+                    </lightning-input>
+                </div>
+                <div class="slds-col slds-size_1-of-3 slds-p-top_medium">
+                    <lightning-button variant="brand" label="Search" title="Search" onclick={handleClick}>
+                    </lightning-button>
+                </div>
+            </div>
+        </div>
+        <div class='slds-p-top_small'>
+            <lightning-record-edit-form object-api-name="Contact" onsuccess={handleSuccess}>
+                <lightning-messages>
+                </lightning-messages>
+                <lightning-input-field field-name="FirstName" value={user.firstName}>
+                </lightning-input-field>
+                <lightning-input-field field-name="LastName" value={user.lastName}>
+                </lightning-input-field>
+                <lightning-input-field field-name="Email" value={user.email}>
+                </lightning-input-field>
+                <lightning-button class="slds-m-top_small" type="submit" label="Create new">
+                </lightning-button>
+            </lightning-record-edit-form>
+
+        </div>
+    </div>
+</template>
